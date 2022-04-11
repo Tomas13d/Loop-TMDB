@@ -1,0 +1,32 @@
+.box {
+    position: relative;
+    margin: 10px auto;
+    text-align: center;
+
+    width: 500px;
+}
+.box img {
+    float: right;
+    margin-left: 2px;
+}
+
+.formUsers {
+    width: 700px;
+    margin: 20px auto;
+}
+
+.btnFav{
+    border: 1px black solid;
+    margin-left: 3px;
+}
+
+.notFound{
+    margin: 0 auto;
+    position: relative;
+}
+
+.friendFavButon{
+    border: 1px solid black;
+    background-color: aliceblue;
+    margin-left: 2px;
+}

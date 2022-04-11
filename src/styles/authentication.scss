@@ -1,0 +1,31 @@
+.cardColor{
+    top: 100px; background: #40916C;
+    background: linear-gradient(to top, #FFF720, #3CD500);
+    border: 1px solid #66fbfb;
+}
+
+.botonColor{
+    border: 1px solid #66fbfb;
+    background: #031636c0;
+    color: #66fbfb;
+   
+}
+
+  
+
+.textCard{
+    color: rgba(0, 0, 0, 0.863)
+}
+
+.textGeneral{
+    color: #66fbfb;
+}
+
+.botonColor:hover{
+    background: linear-gradient(to bottom, #69f8ecd3, #071d2a);
+}
+
+.botonColor:active{
+    background: linear-gradient(to top, #69f8ecd3, #071d2a);
+}
+
