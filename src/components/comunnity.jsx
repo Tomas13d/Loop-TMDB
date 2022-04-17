@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import useInput from "../hooks/useInput";
 import axios from "axios";
+import notUser from "../assets/question.png"
 
 
   
@@ -38,7 +39,7 @@ import axios from "axios";
       ) : (
 
         <div className="box">
-          <img src="https://cdn-icons.flaticon.com/png/512/2115/premium/2115958.png?token=exp=1646421555~hmac=37a0f15fe2b179fadd63d7b74c10db83"  className="rounded-circle" />
+          <img src={notUser}  className="rounded-circle" />
           <p className="textGeneral" >Sorry! we couldn't find your friend in this dimension</p>        
       </div>
   

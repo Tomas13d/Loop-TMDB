@@ -4,6 +4,7 @@ import Buttons from "./Buttons";
 import { UserContext } from "..";
 import Search from "../common/Search";
 import { Link} from "react-router-dom";
+import estrellas from "../assets/estrellas.png" 
 
 const Navbar = () => {
     const {user,setUser} = useContext(UserContext);
@@ -20,18 +21,6 @@ const Navbar = () => {
   },[])
 
 
-const favButton =() => {
-    if(user.id) {
-       return(
-        <>
-         <Link to={"/favorites"}>
-           <img  width={"65"} src="https://cdn-icons.flaticon.com/png/512/2190/premium/2190625.png?token=exp=1647532351~hmac=197271b4f5dc419ffdc694579aad4c5d"/>
-        </Link>
-        
-        </>
-       ) 
-    }
-}
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-dark nav-color">
@@ -61,7 +50,11 @@ const favButton =() => {
               <a className="nav-item nav-link " href="/user/community"><u className="textGeneralNav">Community</u> </a>
             </Link>
             
-            {favButton()}
+            {user.id && (
+               <Link to={"/favorites"}>
+                 <img width={60} src={estrellas}/>
+               </Link>
+            )}
           </div>
         </div>
         <Search/>
