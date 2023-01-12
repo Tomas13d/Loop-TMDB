@@ -59,7 +59,7 @@ const Content = () => {
   
   return id ? (
     <div className="containerGrid">
-    <Grid moviesGener={moviesGener} />
+      <Grid moviesGener={moviesGener} />
     </div>
   ) : (
     <div className="containerGrid">

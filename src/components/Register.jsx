@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import useInput from "../hooks/useInput";
 import axios from "axios";
+import swal from "sweetalert";
 
 const Register = () => {
     const userName = useInput();
@@ -19,7 +20,13 @@ const Register = () => {
           .then(res => {
             navigate("/user/login");
           })
-          .catch(err => alert("There is already a user with this email"));
+          .catch(err => swal({
+            title: "Sorry!",
+            text: "There is already a user with this email",
+            icon: "error",
+            button: false,
+            timer: 2000
+          }));
           
       };
 //alert(`Welcome ${userName.value} to dimension C-137. Please enter your email and password again`)
@@ -65,18 +72,6 @@ const Register = () => {
                         <label className="form-label textCard" >Password</label>
 
                       </div>
-      
-                      <div className="form-check d-flex justify-content-center mb-2">
-
-                        <input
-                          className="form-check-input me-2"
-                          type="checkbox"
-                          id="form2Example3cg"
-                        />
-                        <label className="form-check-label textCard" >I agree all statements in <a href="#!" className="text-body"><u>Terms of service</u></a></label>
-
-                      </div>
-      
                       <div className="d-flex justify-content-center">
                         <button type="submit" className="btn btn-success btn-block btn-lg gradient-custom-4 botonColor">Register</button>
                       </div>

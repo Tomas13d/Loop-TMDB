@@ -19,7 +19,6 @@ const App = () => {
         <>
         <Navbar/>
         <Sidebar/>
-      
                 <Routes>
                     <Route path="/" element={<Navigate replace to="/upcomingMovies"/>}/> 
                     <Route path="*" element={<NotFound/>}/>

@@ -3,6 +3,7 @@ import useInput from "../hooks/useInput";
 import axios from "axios";
 import { useContext } from "react";
 import { UserContext } from "..";
+import swal from "sweetalert";
 
 const Login = () => {
   const email = useInput();
@@ -21,10 +22,14 @@ const Login = () => {
         setUser(res.data);
         navigate("/upcomingMovies");
       })
-      .catch((err) =>
-        alert("The email or password does not match, please try again")
-      );
-  };
+      .catch((err) => swal({
+        title: "Sorry!",
+        text: "The email or password does not match, please try again",
+        icon: "error",
+        button: false,
+        timer: 2000
+      }))
+    }
 
   //intento de autenticacion con google
   /*  const handleClick = () => {
