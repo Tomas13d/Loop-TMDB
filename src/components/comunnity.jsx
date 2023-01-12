@@ -38,7 +38,7 @@ import notUser from "../assets/question.png"
    
       ) : (
 
-        <div className="box">
+        <div className="noUserFound">
           <img src={notUser}  className="rounded-circle" />
           <p className="textGeneral" >Sorry! we couldn't find your friend in this dimension</p>        
       </div>

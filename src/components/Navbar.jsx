@@ -3,29 +3,29 @@ import axios from "axios";
 import Buttons from "./Buttons";
 import { UserContext } from "..";
 import Search from "../common/Search";
-import { Link} from "react-router-dom";
-import estrellas from "../assets/estrellas.png" 
+import { Link } from "react-router-dom";
+import estrellas from "../assets/estrellas.png";
 
 const Navbar = () => {
-    const {user,setUser} = useContext(UserContext);
+  const { user, setUser } = useContext(UserContext);
 
-    //persistencia 
-    useEffect(()=>{
-      if(user){
-        axios
-        .get("/api/login/me")
-        .then(res =>{
-          setUser(res.data)
-        })
-      }
-  },[])
-
+  //persistencia
+  useEffect(() => {
+    if (user) {
+      axios.get("/api/login/me").then((res) => {
+        setUser(res.data);
+      });
+    }
+  }, []);
 
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-dark nav-color">
         <Link to={"/upcomingMovies"}>
-        <img src="https://see.fontimg.com/api/renderfont4/X3WjK/eyJyIjoiZnMiLCJoIjo1MSwidyI6MTAwMCwiZnMiOjUxLCJmZ2MiOiIjNzVDQUJFIiwiYmdjIjoiIzQ2NDY0NiIsInQiOjF9/TE9PUA/uncracked-free-trial.png" alt="logo" />
+          <img
+            src="https://see.fontimg.com/api/renderfont4/X3WjK/eyJyIjoiZnMiLCJoIjo1MSwidyI6MTAwMCwiZnMiOjUxLCJmZ2MiOiIjNzVDQUJFIiwiYmdjIjoiIzQ2NDY0NiIsInQiOjF9/TE9PUA/uncracked-free-trial.png"
+            alt="logo"
+          />
         </Link>
         <button
           className="navbar-toggler"
@@ -40,25 +40,31 @@ const Navbar = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav ">
-            <Link to={"/popularMovies"}>
-              <a className="nav-item nav-link" href="/popularMovies"><u className="textGeneralNav">Movies</u></a>
+            <Link to={"/popularMovies"} className="no-link">
+              <a className="nav-item nav-link" href="/popularMovies">
+                <u className="textGeneralNav">Movies</u>
+              </a>
             </Link>
-            <Link to={"/series"}>
-              <a className="nav-item nav-link" href="/series"><u className="textGeneralNav">Series</u></a>
+            <Link to={"/series"} className="no-link">
+              <a className="nav-item nav-link" href="/series">
+                <u className="textGeneralNav">Series</u>
+              </a>
             </Link>
-            <Link to={"/user/community"}>
-              <a className="nav-item nav-link " href="/user/community"><u className="textGeneralNav">Community</u> </a>
+            <Link to={"/user/community"} className="no-link">
+              <a className="nav-item nav-link " href="/user/community">
+                <u className="textGeneralNav">Community</u>{" "}
+              </a>
             </Link>
-            
+
             {user.id && (
-               <Link to={"/favorites"}>
-                 <img width={60} src={estrellas}/>
-               </Link>
+              <Link to={"/favorites"}>
+                <img width={60} src={estrellas} />
+              </Link>
             )}
           </div>
         </div>
-        <Search/>
-     <Buttons/>
+        <Search />
+        <Buttons />
       </nav>
     </>
   );

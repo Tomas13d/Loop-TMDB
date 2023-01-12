@@ -32,44 +32,45 @@ const Register = () => {
 //alert(`Welcome ${userName.value} to dimension C-137. Please enter your email and password again`)
     return (
         <section className="top">
-          <div className="container h-50" >
-            <div className="row d-flex justify-content-center align-items-center h-50">
-              <div className="col-12 col-sm-9 col-sm-7 col-xl-6">
-                <div className="card cardColor" style={{borderRadius: "15px"}}>
-                  <div className="card-body p-4">
-                    <h2 className="text-uppercase text-center ">Create an account</h2>
+           <div class="background-container">
+        <circle className="shape"></circle>
+        <circle className="shape1"></circle>
+      </div>
+      <div className="social-media-container">
+                  <div className="p-4">
+                    <h2 className="text-uppercase text-center text-white">Create an account</h2>
 
                     <form onSubmit={handleSubmit}>
                       <div className="form-outline mb-2">
 
+                        <label className="form-label textCard" >Your Name</label>
                         <input 
                         {...userName}
                         type="text" 
                         id="form3Example1cg" 
                         className="form-control form-control-sm" />
-                        <label className="form-label textCard" >Your Name</label>
 
                       </div>
       
                       <div className="form-outline mb-2">
 
+                        <label className="form-label textCard" >Your Email</label>
                         <input 
                         {...email}
                         type="email" 
                         id="form3Example3cg" 
                         className="form-control form-control-sm" />
-                        <label className="form-label textCard" >Your Email</label>
 
                       </div>
       
                       <div className="form-outline mb-2">
 
+                        <label className="form-label textCard" >Password</label>
                         <input 
                         {...password}
                         type="password" 
                         id="form3Example4cg" 
                         className="form-control form-control-sm" />
-                        <label className="form-label textCard" >Password</label>
 
                       </div>
                       <div className="d-flex justify-content-center">
@@ -83,11 +84,7 @@ const Register = () => {
                     </form>
       
                   </div>
-                </div>
-              </div>
-            </div>
           </div>
-   
       </section>
     )
 

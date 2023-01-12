@@ -8,8 +8,16 @@
     position: relative;
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
     flex-wrap: wrap;
     margin-left: 100px;
     top: 100px;
+}
+
+.noUserFound{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
 }

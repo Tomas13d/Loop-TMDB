@@ -22,14 +22,16 @@ const Login = () => {
         setUser(res.data);
         navigate("/upcomingMovies");
       })
-      .catch((err) => swal({
-        title: "Sorry!",
-        text: "The email or password does not match, please try again",
-        icon: "error",
-        button: false,
-        timer: 2000
-      }))
-    }
+      .catch((err) =>
+        swal({
+          title: "Sorry!",
+          text: "The email or password does not match, please try again",
+          icon: "error",
+          button: false,
+          timer: 2000,
+        })
+      );
+  };
 
   //intento de autenticacion con google
   /*  const handleClick = () => {
@@ -40,53 +42,54 @@ const Login = () => {
 
   return (
     <section className="top">
-      <div className="container h-50">
-        <div className="row d-flex justify-content-center align-items-center h-50">
-          <div className="col-12 col-sm-9 col-sm-7 col-xl-6">
-            <div className="card cardColor" style={{ borderRadius: "15px" }}>
-              <div className="card-body p-4">
-                <h2 className="text-uppercase text-center ">Login</h2>
+      <div class="background-container">
+        <circle className="shape"></circle>
+        <circle className="shape1"></circle>
+      </div>
 
-                <form onSubmit={handleSubmit}>
+      <div className="social-media-container">
+        <div className="p-4">
+          <h2 className="login text-center text-uppercase">Login</h2>
 
-                  <div className="form-outline mb-2">
-
-                    <input
-                      {...email}
-                      type="email"
-                      id="form3Example3cg"
-                      className="form-control form-control-sm"
-                    />
-                    <label className="form-label textCard">Your Email</label>
-
-                  </div>
-
-                  <div className="form-outline mb-2">
-
-                    <input
-                      {...password}
-                      type="password"
-                      id="form3Example4cg"
-                      className="form-control form-control-sm"
-                    />
-                    <label className="form-label textCard">Password</label>
-
-                  </div>
-
-                  <div className="d-flex justify-content-center">
-                    <button type="submit" className="btn botonColor btn-success btn-block btn-lg gradient-custom-4 ">Login</button>
-                  </div>
-
-                  {/* <a href=""  onClick={handleClick} class="button">Sign in with Google</a> */}
-
-                  <p className="text-center textCard mt-5 mb-0">
-                    You do not have an account?
-                    <Link to={"/user/register"}><u className="textGeneral"> Register here</u></Link>
-                  </p>
-                </form>
-              </div>
+          <form onSubmit={handleSubmit}>
+            <div className="form-outline mb-2">
+              <label className="form-label textCard">Your Email</label>
+              <input
+                {...email}
+                type="email"
+                id="form3Example3cg"
+                className="form-control form-control-sm"
+              />
             </div>
-          </div>
+
+            <div className="form-outline mb-2">
+              <label className="form-label textCard">Password</label>
+              <input
+                {...password}
+                type="password"
+                id="form3Example4cg"
+                className="form-control form-control-sm"
+              />
+            </div>
+
+            <div className="d-flex justify-content-center">
+              <button
+                type="submit"
+                className="btn botonColor btn-success btn-block btn-lg gradient-custom-4 "
+              >
+                Login
+              </button>
+            </div>
+
+            {/* <a href=""  onClick={handleClick} class="button">Sign in with Google</a> */}
+
+            <p className="text-center textCard mt-5 mb-0">
+              You do not have an account?
+              <Link to={"/user/register"}>
+                <u className="textGeneral"> Register here</u>
+              </Link>
+            </p>
+          </form>
         </div>
       </div>
     </section>

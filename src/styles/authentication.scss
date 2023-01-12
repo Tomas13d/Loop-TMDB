@@ -9,9 +9,67 @@
     border: 1px solid #66fbfb;
     background: #031636c0;
     color: #66fbfb;
+    margin-top: 20px;
    
 }
-
+.background-container{
+    position: absolute;
+    border-radius: 20%;
+    left: 30%;
+    width: 600px;
+    height: 500px;
+    animation: rotate 25s infinite;
+    animation-direction: alternate
+  }
+  @keyframes rotate {
+    0% {
+        transform: rotate(10deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+  }
+  .background-container .shape {
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    border-radius: 50%;
+  }
+  
+  .background-container .shape1 {
+    height: 250px;
+    width: 250px;
+    position: absolute;
+    border-radius: 50%;
+  }
+  
+  .shape {
+    background: linear-gradient(to right, #41d2c6, #2d54fd);
+    left: 0px;
+    top: 0px;
+    transform: translate(0, 20);
+  }
+  
+  .shape1 {
+    background: linear-gradient(to right, #0055ff, #6504A1);
+    left: 50px;
+    top: 450px;
+    transform: translate(0, 20);
+  }
+.social-media-container{
+    padding: 10px;
+    height: 450px;
+    width: 600px;
+    background-color: rgba(255, 255, 255, 0.05);
+    position:absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+    background-image: url('../assets/Greni3.png');
+  }
   
 
 .textCard{
@@ -30,3 +88,7 @@
     background: linear-gradient(to top, #69f8ecd3, #071d2a);
 }
 
+.login{
+    color: #fff;
+    margin-bottom: 20px;
+}
